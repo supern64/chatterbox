@@ -1,5 +1,5 @@
 -- Instructions on how to set up Chatterbox for your own --
-(This version is heavily customizable. If you have trouble setting this up and is fine with uncustomizable options, use the default version (http://chanonlim.pythonanywhere.com/static/chatterbox.rar))
+(This version is heavily customizable and requires a bit of knowledge on JSON. If you don't want to deal with JSON and are fine with not having custom phrases, use the default version (http://chanonlim.pythonanywhere.com/static/chatterbox.rar))
 
 Prerequisites:
 Python (3.7.0 and some other versions (>3.5.4) should work) (https://www.python.org/downloads/)
