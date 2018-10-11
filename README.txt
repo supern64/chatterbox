@@ -1,4 +1,5 @@
 -- Instructions on how to set up Chatterbox for your own --
+(This version is heavily customizable. If you have trouble setting this up and is fine with uncustomizable options, use the default version (http://chanonlim.pythonanywhere.com/static/chatterbox.rar))
 
 Prerequisites:
 Python (3.7.0 and some other versions (>3.5.4) should work) (https://www.python.org/downloads/)
@@ -25,11 +26,18 @@ These are the files you should get when downloading and extracting Chatterbox:
 - On the "Bot" menu in the "Token" section, click "Copy" (This is NOT the client secret!!!)
 
 2. Set up Chatterbox
+***PLEASE TAKE A LOOK AT THE JSON FORMAT BELOW!!!
 - Open up config.json in any text editor
 *DONT FORGET QUOTES HERE AND DONT DELETE ANYTHING!!!
 - Paste the token you copied earlier after "token": "[your token here]"
 - Type in the prefix after "prefix": "[your prefix here]"
 - Type in the playing status after "status": "[your game name here]", leave it if you don't want status
+- In this version, you can add custom responses and custom "I don't understand" message.
+- Type in the name after "name": [your name here] to locate the name of the bot.
+- Type in a list of responses if the bot does not understand the question after "not_understand_responses"
+- Type in a list of custom responses as a list in the dictionary after "custom_responses"
+- Don't edit the corpus if you want to use English. If you wish to use another language, edit it here.
+***TOKEN, STATUS, PREFIX, NAME, NOT_UNDERSTAND_RESPONSES AND CORPUS ARE REQUIRED TO BE PRESENT!!!
 - Save the file
 
 3. Start the bot
@@ -62,7 +70,17 @@ Here is an example of a valid config.json (and no, this token is not valid):
 {
     "token": "QiPdkDMfOPDmsuNfOfmFO-FVIVmbPfj_FfjFIFm.FydvkOV.FifKkfDIFkOFLVVF",
     "status": "with my boy",
-    "prefix": "box"
+    "prefix": "box",
+    "bot_settings": {
+        "name": "Jwindish",
+        "not_understand_responses": ["Umm... Sorry but I don't really understand...",
+                                    "I don't know what you mean."],
+        "custom_responses": [
+            {"Knock Knock!": "Who's that?"},
+            {"THE DOOR": "I know it's an asdfmovie joke"}
+        ],
+        "corpus": "chatterbot.corpus.english"
+    }
 }
 Double-check EVERYTHING.
 Here is a list of common mistakes:

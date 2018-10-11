@@ -1,5 +1,13 @@
 {
     "token": "",
     "status": "",
-    "prefix": ""
+    "prefix": "",
+    "bot_settings": {
+        "name": "",
+        "not_understand_responses": [""],
+        "custom_responses": [
+            {"": ""}
+        ],
+        "corpus": "chatterbot.corpus.english"
+    }
 }

@@ -1,4 +1,4 @@
-# ChatterBox bot
+# ChatterBox bot (Custom version)
 # Requires chatterbot and discord.py rewrite installed
 # Configs should be put in a file called config.json
 
@@ -6,32 +6,35 @@ import discord
 import json
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
-chatbot = ChatBot("Roboto",
-                    logic_adapters=[
-                      "chatterbot.logic.BestMatch",
-                      "chatterbot.logic.MathematicalEvaluation",
-                      {
-                        'import_path': 'chatterbot.logic.SpecificResponseAdapter',
-                        'input_text': 'Who am I talking to?',
-                        'output_text': "You're talking to an AI"
-                      },
-                      "chatterbot.logic.TimeLogicAdapter",
-                      {
-                        'import_path': 'chatterbot.logic.LowConfidenceAdapter',
-                        'threshold': 0.65,
-                        'default_response': ['I am sorry, but I do not understand.',
-                                            "Umm... I don't get it...",
-                                            "Sorry. I don't really get it.",
-                                            "I didn't understand what you meant. Sorry."]
-                      }])
-chatbot.set_trainer(ChatterBotCorpusTrainer)
+# LOAD REQUIRED
 try:
     config = json.load(open('config.json'))
     token = config['token']
     status = config['status']
     prefix = config['prefix']
+    bcfg = config['bot_settings']
 except:
     print("Loading JSON failed. Make sure you have the correct format of configuration in a file named config.json")
+adpters = [
+    "chatterbot.logic.BestMatch",
+    "chatterbot.logic.MathematicalEvaluation",
+    "chatterbot.logic.TimeLogicAdapter",
+    {
+        'import_path': 'chatterbot.logic.LowConfidenceAdapter',
+        'threshold': 0.65,
+        'default_response': bcfg['not_understand_responses']
+    }
+]
+for i in bcfg['custom_responses']:
+    adpters.append(
+        {
+            'import_path': 'chatterbot.logic.SpecificResponseAdapter',
+            'input_text': ''.join(i.keys()),
+            'output_text': i.get(''.join(i.keys()))
+        },
+    )
+chatbot = ChatBot(bcfg['name'], logic_adapters=adpters)
+chatbot.set_trainer(ChatterBotCorpusTrainer)
 client = discord.Client()
 
 @client.event
