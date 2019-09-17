@@ -26,7 +26,7 @@ These are the files you should get when downloading and extracting Chatterbox:
 
 2. Set up Chatterbox
 - Open up config.json in any text editor
-*DONT FORGET QUOTES HERE AND DONT DELETE ANYTHING!!!
+*DONT FORGET QUOTES HERE AND DONT DELETE ANYTHING IN THE STRUCTURE OF THE JSON FILE!!!
 - Paste the token you copied earlier after "token": "[your token here]"
 - Type in the prefix after "prefix": "[your prefix here]"
 - Type in the playing status after "status": "[your game name here]", leave it if you don't want status
@@ -51,8 +51,7 @@ https://discordapp.com/oauth2/authorize?client_id=[your client ID]&scope=bot&per
 Congratulations! You have successfully set up the bot! Use it to your enjoyment!
 
 5. Maintainance
-- To reset the bot's word database in case it gets messed up, download the original file from here:
-https://chanonlim.pythonanywhere.com/static/db.sqlite3
+- To reset the bot's word database in case it gets messed up, download the original file from this repository.
 - Then replace the db.sqlite3 in the Chatterbox folder with the one from the link (DO NOT CHANGE THE FILE NAME!!!)
 
 Errors:
@@ -66,10 +65,10 @@ Here is an example of a valid config.json (and no, this token is not valid):
 }
 Double-check EVERYTHING.
 Here is a list of common mistakes:
-Use single-quotes instead of double-quotes. ONLY USE DOUBLE-QUOTES
-Forgot the ",". DONT FORGET ","s.
+You used single-quotes instead of double-quotes. ONLY USE DOUBLE-QUOTES.
+You forgot the ",". DONT FORGET ","s.
 You can try and use a JSON validator online (e.g. https://jsonformatter.org/).
-If you have trouble with these errors or any other errors, please contact me on Discord, SuperNiintendo#3700
+If you have trouble with these errors or any other errors, please contact me on Discord, Super64#3700
 
 
 
