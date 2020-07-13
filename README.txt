@@ -23,6 +23,7 @@ These are the files you should get when downloading and extracting Chatterbox:
 - Set public bot to "on" if you want, but do NOT enable "requires oauth2 code grant".
 *Don't forget to click "Save Changes" on the bottom of the screen after setting the name and avatar for both Application and bot!
 - On the "Bot" menu in the "Token" section, click "Copy" (This is NOT the client secret!!!)
+***IMPORTANT: DO NOT PUBLISH YOUR TOKEN ANYWHERE! THIS MAY LEAD TO YOUR BOT BEING HACKED!***
 
 2. Set up Chatterbox
 - Open up config.json in any text editor
